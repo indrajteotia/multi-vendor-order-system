@@ -1,0 +1,188 @@
+{
+	"info": {
+		"_postman_id": "667da1d3-8c67-44bc-952c-17214cb73313",
+		"name": "Multi Vendor System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37853957"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"AB\",\r\n  \"email\": \"ab@example.com\",\r\n  \"password\": \"123456\",\r\n  \"role\": \"vendor\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"abcd@example.com\",\r\n  \"password\": \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Public Route",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/test/public",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"test",
+						"public"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Protected Route",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MDFiMDlmYmY5MjNjMzU5ZjQ5M2JjNSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc0NDk0MTIxNiwiZXhwIjoxNzQ3NTMzMjE2fQ.MsjS9tJqllvnun9y5QbdMzTxxvr5NIKD0SKiu1fCQ0U",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/test/protected",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"test",
+						"protected"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer-Only Route",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MDFiMDlmYmY5MjNjMzU5ZjQ5M2JjNSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc0NDk0MTIxNiwiZXhwIjoxNzQ3NTMzMjE2fQ.MsjS9tJqllvnun9y5QbdMzTxxvr5NIKD0SKiu1fCQ0U",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/test/customer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"test",
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Vendor-Only Route",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MDFiMTRiYmY5MjNjMzU5ZjQ5M2JjYSIsInJvbGUiOiJ2ZW5kb3IiLCJpYXQiOjE3NDQ5NDEzODgsImV4cCI6MTc0NzUzMzM4OH0.2rtaObO25E-pk2zFbRMchi4Swk2FULgS9g7CPEL3Hxk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/test/customer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"test",
+						"customer"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
