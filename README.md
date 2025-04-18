@@ -22,12 +22,14 @@ A complete backend system for managing multi-vendor orders with JWT authenticati
 - Redis (optional)
 - Git
 
-## Prereuisite (Install Modules)
+## Prerequisites (Install Modules)
 ```bash
 npm install
+```
 
 ## Installation
 
 1. Clone the repository:
 ```bash
 git clone https://github.com/indrajteotia/multi-vendor-order-system.git
+```
