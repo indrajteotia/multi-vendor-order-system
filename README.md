@@ -17,7 +17,7 @@ A complete backend system for managing multi-vendor orders with JWT authenticati
 
 ## Prerequisites
 
-- Node.js 14.x or higher
+- Node.js 22.x or higher
 - MongoDB 5.0
 - Redis (optional)
 - Git
