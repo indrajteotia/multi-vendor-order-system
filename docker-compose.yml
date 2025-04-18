@@ -8,8 +8,8 @@ services:
     environment:
       - NODE_ENV=development
       - PORT=5000
-      - MONGODB_URI=mongodb+srv://instamauj:vQrWnFaW8vueMMZY@cluster0.ak1cqzd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
-      - JWT_SECRET=mySuperSecretKey123!@#$%^&*()
+      - MONGODB_URI=mongodb+srv://username:password@cluster0.ak1cqzd.mongodb.net/
+      - JWT_SECRET=jwt_secret_code
       - REDIS_HOST=redis
     volumes:
       - .:/usr/src/app
@@ -26,8 +26,8 @@ services:
     volumes:
       - mongodb_data:/data/db
     environment:
-      - MONGO_INITDB_ROOT_USERNAME=instamauj
-      - MONGO_INITDB_ROOT_PASSWORD=vQrWnFaW8vueMMZY
+      - MONGO_INITDB_ROOT_USERNAME=username
+      - MONGO_INITDB_ROOT_PASSWORD=password
 
   redis:
     image: redis:6-alpine
