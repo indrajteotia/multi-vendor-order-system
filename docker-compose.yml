@@ -8,8 +8,8 @@ services:
     environment:
       - NODE_ENV=development
       - PORT=5000
-      - MONGODB_URI=mongodb+srv://username:password@cluster0.ak1cqzd.mongodb.net/
-      - JWT_SECRET=jwt_secret_code
+      - MONGODB_URI=${MONGO_URI}
+      - JWT_SECRET=${JWT_SECRET}
       - REDIS_HOST=redis
     volumes:
       - .:/usr/src/app
@@ -26,8 +26,8 @@ services:
     volumes:
       - mongodb_data:/data/db
     environment:
-      - MONGO_INITDB_ROOT_USERNAME=username
-      - MONGO_INITDB_ROOT_PASSWORD=password
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_USER}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_PWD}
 
   redis:
     image: redis:6-alpine
